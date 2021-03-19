@@ -1,12 +1,14 @@
 # ClubHome
 ### A clubhouse clone as part of Django crash course by Yothin Muangsommuk (เขียนงูให้วัวกลัว)
 
+![Clubhome](clubhome.png?raw=true "Clubhome")
+
 ## How to set up project
-I'm encouraging using PyCharm to developing this project since it can managing the initial process to install the dependencies.
+I'm encouraging using PyCharm to develop this project since it can manage the initial process to install the dependencies.
 
 If you using PyCharm you can just import this project via `Import from VCS` and then PyCharm will create virtualenv and install 3rd party library we defined in requirements.txt
 
-If you using other editor you can follow below step to setting up this project
+If you're using other editor you can follow below step to setting up this project
 
 1. Clone this project or download from GitHub
    ```
