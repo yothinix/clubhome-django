@@ -1,4 +1,4 @@
-# ClubHome
+# ClubHome 🎙✨
 ### A clubhouse clone as part of Django crash course by Yothin Muangsommuk (เขียนงูให้วัวกลัว)
 
 ![Clubhome](clubhome.png?raw=true "Clubhome")
