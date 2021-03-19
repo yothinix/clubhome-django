@@ -39,6 +39,7 @@ If you using other editor you can follow below step to setting up this project
    ```
    
 ## Additional link
+* [GitHub: gatukgl / hello-clubhouse](https://github.com/gatukgl/hello-clubhouse)
 * [Yothin Muangsommuk - Don't reinvent the wheel with Django generic - PySomTum #1](https://www.youtube.com/watch?v=6S0P9DMZYRQ)
 * [GitHub: yothinix / pysomtum-generic-demo example code](https://github.com/yothinix/pysomtum-generic-demo)
 * [Obey the Testing Goat! - Test-Driven Web Development with Python](https://www.obeythetestinggoat.com/pages/book.html#toc)
