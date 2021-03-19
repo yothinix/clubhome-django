@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- profile image and follow buttons -->
+    <div>
+        <img style="width: 150px; height:150px; border-radius: 45%;"
+             src="{{ object.profile_picture.url }}" />
+
+        <div class="my-3">
+            <a href="#" class="btn btn-primary btn-md active" role="button" aria-pressed="true" style="border-radius: 25px; background-color: #5b76a6; border-color: #5b76a6; padding-left: 20px; padding-right: 20px">following</a>
+        </div>
+
+        <div class="my-3">
+            <a href="#" class="btn btn-primary btn-md active" role="button" aria-pressed="true" style="border-radius: 25px; color: #5b76a6;background-color: #f2efe4; border: 2px solid #5b76a6; padding-left: 20px; padding-right: 20px">follow</a>
+        </div>
+    </div>
+
+    <!-- profile information   -->
+    <div class="my-4">
+        <h4>{{ object.name }}</h4>
+        <h5>@{{ object.username }}</h5>
+    </div>
+
+    <!--  following/follower -->
+    <div class="my-4">
+        <span class="pe-1 fs-5">134</span><span class="pe-1">followers</span>
+        <span class="pe-1 fs-5" style="margin-left: 50px">20</span><span class="pe-1">followings</span>
+    </div>
+
+    <!--  bio  -->
+    <div class="my-5">
+        <p class="fs-5">{{ object.profile_description }}</p>
+    </div>
+
+    <!--  social contact -->
+    <div class="my-5">
+        <div style="display: inline">
+            <i class="fab fa-twitter fs-4" style="color: #5b76a6"></i>
+            <span class="fs-5" style="margin-left: 4px">{{ object.twitter }}</span>
+        </div>
+
+        <div style="margin-left: 20px; display: inline">
+            <i class="fab fa-instagram fs-4" style="color: #5b76a6"></i>
+            <span class="fs-5" style="margin-left: 4px">{{ object.instagram }}</span>
+        </div>
+    </div>
+{% endblock %}

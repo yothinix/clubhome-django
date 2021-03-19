@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block additional-css %}
+    <link rel="stylesheet" href="{% static 'css/tailwind.min.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!--  Nav Bar  -->
+    <div class="float-right my-4 d-flex align-items-center">
+        <!-- Events -->
+        <div class="mr-5" style="display: inline-block; font-size: 2rem">
+            <a href="#">
+                <i class="far fa-calendar-alt"></i>
+            </a>
+        </div>
+
+        <!-- Profile image -->
+        <div style="display: inline-block">
+            <a type="button" href="#">
+                <img class="rounded-full" style="width: 40px; height: 40px" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+            </a>
+        </div>
+    </div>
+
+    {% for item in rooms %}
+    <!-- First room -->
+    <div class="card w-100 mb-4 p-5" style="height: auto; border: 0; border-radius: 22px">
+        <!-- title -->
+        <span class="fs-5">{{ item.topic }}</span>
+
+        <!-- Moderators -->
+        <div class="container my-4">
+            <div class="row">
+                <!-- images -->
+                <div class="col-3" style="padding-left: 0">
+                    <div class="flex -space-x-2 overflow-hidden">
+                        {% for moderator in item.room_moderator.all %}
+                        <a href="{% url 'user-profile-generic' moderator.user.username %}">
+                        <img class="inline-block rounded-full ring-2 ring-white"
+                             style="border-radius: 40%; height:80px; width: 80px"
+                             src="{{ moderator.user.profile_picture.url }}"
+                             alt="">
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- names and number of attendees-->
+                <div class="col fs-5">
+                    {% for moderator in item.room_moderator.all %}
+                    <div><span><a href="{% url 'user-profile-generic' moderator.user.username %}">{{ moderator.user.name }}</a></span><span class="ml-2">💬</span></div>
+                    {% endfor %}
+
+                    <div class="mt-2" style="color: #999999">
+                        <span>{{ item.room_listener.count }} <i class="fas fa-user"></i></span>
+                        <span style="margin: 0 8px">/</span>
+                        <span>{{ item.room_moderator.count }} <i class="fas fa-comment-dots"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!--  Start room button  -->
+    <div class="my-4">
+        <a href="#" class="btn btn-primary btn-md active d-block mx-auto" role="button" aria-pressed="true" style="border-radius: 25px; background-color: #55ab68; border-color: #55ab68; padding-left: 20px; padding-right: 20px">
+            <i class="fas fa-plus mr-2"></i>
+            Start a room
+        </a>
+    </div>
+{% endblock %}

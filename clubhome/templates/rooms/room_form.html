@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post" action="{% url 'room-create-with-user' %}">{% csrf_token %}
+    <div class="d-flex justify-content-center fs-5">START A ROOM</div>
+    <div class="my-4 fs-5">Add a topic...</div>
+    <div class="my-4 fs-5">
+        <input name="topic" id="id_topic" class="form-control mr-sm-2" type="text" placeholder="🗒 e.g. Raising wolves - good idea?" aria-label="Search">
+    </div>
+
+    <!--  Start a room  -->
+    <div class="my-4">
+        <input value="Set Topic"
+               type="submit"
+               class="btn btn-primary btn-md active d-block w-100"
+               style="border-radius: 25px; background-color: #55ab68; border-color: #55ab68; padding-left: 20px; padding-right: 20px">
+    </div>
+</form>
+{% endblock %}
