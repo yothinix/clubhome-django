@@ -9,9 +9,11 @@ from rest_framework.routers import DefaultRouter
 from rooms.views import RoomListView, RoomCreateView, RoomCreateWithUserView
 from rooms.views_api import RoomViewSet
 from users.views import UserProfileView, UserProfileGenericView
+from users.views_api import UserViewSet
 
 router = DefaultRouter()
 router.register(r'rooms', RoomViewSet, basename='room')
+router.register(r'users', UserViewSet, basename='user')
 
 urlpatterns = [
     path('', RoomListView.as_view(), name='room-list'),
